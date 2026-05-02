@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: unified-autonomous-ai
+    runtime: python
+    repo: https://github.com/MayaAngels/unified-autonomous-ai
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port \
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: PORT
+        value: 8001
