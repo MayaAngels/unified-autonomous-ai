@@ -1,13 +1,16 @@
 services:
   - type: web
     name: unified-autonomous-ai
-    runtime: python
+    runtime: image
     repo: https://github.com/MayaAngels/unified-autonomous-ai
     branch: main
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port \
+    dockerfilePath: ./Dockerfile
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.0
-      - key: PORT
-        value: 8001
+      - key: DAMPING_FACTOR
+        value: 0.3
+      - key: HISTORY_WINDOW_HOURS
+        value: 24
+      - key: OBSERVATION_INTERVAL
+        value: 30
+      - key: LOG_LEVEL
+        value: info
