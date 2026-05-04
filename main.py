@@ -1,12 +1,14 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from typing import Dict, List, Any
+from typing import Dict, List, Optional
 from datetime import datetime
-import random
 import os
+import random
+import json
+import math
 
-app = FastAPI(title="Unified System with URIS", version="5.3.0")
+app = FastAPI(title="Autopoietic Intelligence Fabric", version="6.0.0")
 
 app.add_middleware(
     CORSMiddleware,
@@ -22,149 +24,238 @@ app.add_middleware(
 
 @app.get("/health")
 async def health():
-    return {"status": "healthy", "version": "5.3.0", "components": {"uris": "active"}, "timestamp": datetime.now().isoformat()}
+    return {"status": "healthy", "version": "6.0.0", "components": {"fep": "active", "kolmogorov": "active", "nash": "active", "geometry": "active", "refactor": "active", "value": "active", "uris": "active"}}
 
 # ============================================================
-# URIS WATCHERS
+# FEP AGENTS
 # ============================================================
 
-watchers_data = {
-    "Anatoly": [{"name": "7_axis", "perf": 0.85}, {"name": "tree_sitter", "perf": 0.90}],
-    "Assay": [{"name": "policy_code", "perf": 0.80}, {"name": "compliance", "perf": 0.85}],
-    "Shadow": [{"name": "behavior_diff", "perf": 0.88}, {"name": "causal", "perf": 0.65}],
-    "KernelEvolve": [{"name": "agentic_gen", "perf": 0.82}, {"name": "mcts", "perf": 0.78}]
-}
+fep_beliefs = {}
+
+@app.get("/api/v1/fep/state/{shop_id}")
+async def fep_state(shop_id: str):
+    if shop_id not in fep_beliefs:
+        fep_beliefs[shop_id] = {"conversion": 0.05, "revenue": 500, "precision": 1.0}
+    return {"shop_id": shop_id, "beliefs": fep_beliefs[shop_id]}
+
+@app.post("/api/v1/fep/perceive/{shop_id}")
+async def fep_perceive(shop_id: str, observation: str, value: float):
+    if shop_id not in fep_beliefs:
+        fep_beliefs[shop_id] = {"conversion": 0.05, "revenue": 500, "precision": 1.0}
+    pred = fep_beliefs[shop_id].get(observation, 0.5)
+    return {"free_energy": abs(value - pred)}
+
+@app.post("/api/v1/fep/infer/{shop_id}")
+async def fep_infer(shop_id: str, observation: str, value: float):
+    if shop_id not in fep_beliefs:
+        fep_beliefs[shop_id] = {"conversion": 0.05, "revenue": 500, "precision": 1.0}
+    pred = fep_beliefs[shop_id].get(observation, 0.5)
+    fep_beliefs[shop_id][observation] = pred + 0.1 * (value - pred)
+    return {"updated": True}
+
+@app.post("/api/v1/fep/act/{shop_id}")
+async def fep_act(shop_id: str, observation: str, value: float):
+    if shop_id not in fep_beliefs:
+        fep_beliefs[shop_id] = {"conversion": 0.05, "revenue": 500, "precision": 1.0}
+    pred = fep_beliefs[shop_id].get(observation, 0.5)
+    error = abs(value - pred)
+    return {"action": "intervene" if error > 0.1 else "continue", "confidence": 0.9 if error > 0.1 else 0.7}
+
+@app.get("/api/v1/fep/global-health")
+async def fep_global_health():
+    return {"global_free_energy": 0.5, "health": "GOOD", "shops": len(fep_beliefs)}
+
+# ============================================================
+# KOLMOGOROV ARCHIVER
+# ============================================================
+
+archive_store = {}
+archive_counter = 0
+
+@app.post("/api/v1/archive/insight")
+async def archive_insight(data: Dict):
+    global archive_counter
+    archive_counter += 1
+    aid = f"archived_{archive_counter}"
+    archive_store[aid] = {"id": aid, "shop": data.get("source_shop"), "insight": data.get("insight_text"), "created": datetime.now().isoformat()}
+    return {"id": aid, "success": True}
+
+@app.get("/api/v1/archive/summary")
+async def archive_summary():
+    return {"total": len(archive_store), "insights": list(archive_store.keys())}
+
+# ============================================================
+# NASH EQUILIBRIUM
+# ============================================================
+
+nash_history = []
+trembling_count = 0
+
+@app.post("/api/v1/nash/equilibrium/check")
+async def nash_check(data: Dict):
+    is_nash = (data.get("action_a") == "defect" and data.get("action_b") == "defect")
+    nash_history.append({"is_nash": is_nash, "timestamp": datetime.now().isoformat()})
+    return {"is_nash_equilibrium": is_nash}
+
+@app.get("/api/v1/nash/equilibrium/status")
+async def nash_status():
+    total = len(nash_history)
+    eq = sum(1 for h in nash_history if h.get("is_nash"))
+    return {"total_checks": total, "equilibrium_found": eq, "equilibrium_rate": eq / max(1, total)}
+
+@app.post("/api/v1/nash/tremble")
+async def nash_tremble():
+    global trembling_count
+    trembling_count += 1
+    return {"trembling_applied": True, "trembling_count": trembling_count}
+
+# ============================================================
+# INFORMATION GEOMETRY
+# ============================================================
+
+def normalize(b):
+    total = sum(max(0.01, v) for v in b.values())
+    return {k: max(0.01, v) / total for k, v in b.items()}
+
+def kl(p, q):
+    return sum(p[k] * math.log(p[k] / q.get(k, 0.01) + 1e-10) for k in p.keys())
+
+def fisher_dist(p, q):
+    return math.sqrt((kl(p, q) + kl(q, p)) / 2)
+
+@app.get("/api/v1/geometry/distance/{a}/{b}")
+async def geometry_distance(a: str, b: str):
+    if a not in fep_beliefs or b not in fep_beliefs:
+        return {"error": "Shop not found"}
+    pa = normalize(fep_beliefs[a])
+    pb = normalize(fep_beliefs[b])
+    dist = fisher_dist(pa, pb)
+    return {"shop_a": a, "shop_b": b, "fisher_distance": round(dist, 4)}
+
+@app.get("/api/v1/geometry/manifold")
+async def geometry_manifold():
+    return {"diversity_score": 0.75, "shop_count": len(fep_beliefs)}
+
+# ============================================================
+# AUTO-REFACTOR ENGINE
+# ============================================================
+
+refactor_proposals = {}
+refactor_history = []
+refactor_counter = 0
+
+@app.post("/api/v1/refactor/detect/{shop_id}")
+async def refactor_detect(shop_id: str):
+    global refactor_counter
+    refactor_counter += 1
+    pid = f"refactor_{refactor_counter}"
+    refactor_proposals[pid] = {"id": pid, "shop_id": shop_id, "status": "approved"}
+    return {"submitted": True, "proposal_id": pid}
+
+@app.get("/api/v1/refactor/proposals")
+async def refactor_proposals_list():
+    return {"proposals": list(refactor_proposals.values()), "count": len(refactor_proposals)}
+
+@app.get("/api/v1/refactor/stats")
+async def refactor_stats():
+    return {"total_proposals": len(refactor_proposals), "deployed": len(refactor_proposals), "success_rate": 1.0}
+
+# ============================================================
+# VALUE ALIGNMENT BRIDGE
+# ============================================================
+
+values = []
+constraints = []
+narratives = []
+
+@app.post("/api/v1/values/add")
+async def add_value(data: Dict):
+    vid = f"value_{len(values)+1}"
+    values.append({"id": vid, "statement": data.get("statement"), "importance": data.get("importance", 0.7)})
+    return {"value_id": vid, "translated": True}
+
+@app.get("/api/v1/values/summary")
+async def get_values():
+    return {"values": values, "total": len(values)}
+
+@app.post("/api/v1/values/constraint")
+async def add_constraint(data: Dict):
+    cid = f"constraint_{len(constraints)+1}"
+    constraints.append({"id": cid, "description": data.get("description")})
+    return {"constraint_id": cid}
+
+@app.post("/api/v1/narrative/submit")
+async def submit_narrative(data: Dict):
+    nid = f"narrative_{len(narratives)+1}"
+    narratives.append({"id": nid, "hypothesis": data.get("hypothesis")})
+    return {"narrative_id": nid, "validation": {"confidence": 0.75, "supported": True}}
+
+@app.get("/api/v1/narrative/insights")
+async def get_narrative_insights():
+    return {"validated_hypotheses": len(narratives), "insights": []}
+
+@app.post("/api/v1/fep/value-act/{shop_id}")
+async def value_act(shop_id: str, observation: str, value: float):
+    return {"shop_id": shop_id, "action": "balanced", "value_aligned": True}
+
+# ============================================================
+# URIS
+# ============================================================
+
+watchers = ["Anatoly", "Assay", "Shadow", "KernelEvolve"]
+advantages = []
 
 @app.get("/api/v1/uris/status")
 async def uris_status():
-    return {"active_watchers": 4, "watchers": list(watchers_data.keys()), "total_capabilities": 8}
-
-@app.get("/api/v1/uris/competitors")
-async def uris_competitors():
-    return {"competitors": list(watchers_data.keys()), "count": 4}
-
-@app.get("/api/v1/uris/insights")
-async def uris_insights():
-    return {"insights": [{"source": n, "capabilities": c} for n, c in watchers_data.items()]}
-
-@app.get("/api/v1/uris/integration-plans")
-async def uris_integration_plans():
-    plans = []
-    for src, caps in watchers_data.items():
-        for cap in caps:
-            plans.append({"id": f"plan_{src}_{cap['name']}", "capability": cap["name"], "source": src, "performance": cap["perf"], "benefit": cap["perf"] * 0.7})
-    plans.sort(key=lambda x: x["benefit"], reverse=True)
-    return {"plans": plans[:10], "count": len(plans)}
-
-# ============================================================
-# SANDBOX
-# ============================================================
-
-sandboxes = {}
-sandbox_counter = 0
-
-@app.post("/api/v1/uris/sandbox/create")
-async def create_sandbox():
-    global sandbox_counter
-    sandbox_counter += 1
-    sid = f"sandbox_{sandbox_counter}"
-    sandboxes[sid] = {"created": datetime.now().isoformat()}
-    return {"sandbox_id": sid, "status": "ready"}
-
-@app.get("/api/v1/uris/sandboxes")
-async def list_sandboxes():
-    return {"active_sandboxes": len(sandboxes), "sandboxes": list(sandboxes.keys())}
-
-@app.post("/api/v1/uris/sandbox/{sid}/test")
-async def test_in_sandbox(sid: str, capability: Dict):
-    if sid not in sandboxes:
-        return {"error": "Sandbox not found"}
-    result = {"success": random.random() > 0.2, "stability": random.uniform(0.6, 0.95), "capability": capability.get("name", "unknown")}
-    return result
-
-@app.delete("/api/v1/uris/sandbox/{sid}")
-async def destroy_sandbox(sid: str):
-    if sid in sandboxes:
-        del sandboxes[sid]
-        return {"success": True}
-    return {"success": False}
-
-@app.post("/api/v1/uris/validate-plan/{plan_id}")
-async def validate_plan(plan_id: str):
-    global sandbox_counter
-    sandbox_counter += 1
-    sid = f"sandbox_{sandbox_counter}"
-    sandboxes[sid] = {"created": datetime.now().isoformat()}
-    passed = random.random() > 0.3
-    return {"plan_id": plan_id, "sandbox_id": sid, "should_integrate": passed, "recommendation": "APPROVED" if passed else "REJECTED"}
-
-# ============================================================
-# ADVANTAGES
-# ============================================================
-
-advantages = []
-adv_counter = 0
-
-@app.get("/api/v1/uris/uncatchability")
-async def get_uncatchability():
-    return {"score": min(0.95, len(advantages) * 0.12), "unique_advantages": len(advantages), "lead_time_days": len(advantages) * 30}
+    return {"active_watchers": 4, "watchers": watchers}
 
 @app.post("/api/v1/uris/generate-advantage")
 async def generate_advantage():
-    global adv_counter
-    adv_counter += 1
-    names = ["cross_competitor_synthesis", "real_time_adaptation", "recursive_self_improvement", "emergent_optimization", "predictive_integration"]
-    adv = {"id": f"adv_{adv_counter}", "name": random.choice(names), "performance": round(random.uniform(0.82, 0.95), 2)}
+    adv = {"id": f"adv_{len(advantages)+1}", "name": random.choice(["cross_synthesis", "real_time_adapt"]), "performance": 0.9}
     advantages.append(adv)
-    return {"advantage": adv, "uncatchability": min(0.95, len(advantages) * 0.12)}
+    return {"advantage": adv}
 
-@app.get("/api/v1/uris/advantages")
-async def list_advantages():
-    return {"advantages": advantages, "count": len(advantages)}
+@app.get("/api/v1/uris/uncatchability")
+async def uncatchability():
+    return {"score": min(0.95, len(advantages) * 0.12), "advantages": len(advantages)}
 
-@app.get("/api/v1/uris/dashboard")
-async def uris_dashboard():
-    return {
-        "watchers": {"active": 4, "competitors": list(watchers_data.keys()), "total_capabilities": 8},
-        "sandboxes": {"active": len(sandboxes), "total_created": sandbox_counter},
-        "advantages": {"generated": len(advantages), "uncatchability": min(0.95, len(advantages) * 0.12)},
-        "timestamp": datetime.now().isoformat()
-    }
+# ============================================================
+# SHOP METRICS
+# ============================================================
+
+class ShopMetrics(BaseModel):
+    shop_id: str
+    conversion_rate: float
+    revenue_24h: float
+    customer_count_24h: int
+    avg_response_time_ms: float
+    error_rate: float
+    cross_shop_flow_count: int
+    custom_metrics: Dict[str, float] = {}
+
+@app.post("/api/v1/shop/metrics")
+async def receive_metrics(metrics: ShopMetrics):
+    if metrics.shop_id not in fep_beliefs:
+        fep_beliefs[metrics.shop_id] = {"conversion": 0.05, "revenue": 500, "precision": 1.0}
+    fep_beliefs[metrics.shop_id]["conversion"] = metrics.conversion_rate
+    fep_beliefs[metrics.shop_id]["revenue"] = metrics.revenue_24h
+    return {"status": "ok", "shop_id": metrics.shop_id}
 
 # ============================================================
 # EVOLUTION
 # ============================================================
 
-evolution_cycle = 0
+cycle = 0
 
 @app.get("/api/v1/evolution/status")
 async def evolution_status():
-    return {"status": "active", "cycle": evolution_cycle, "insights_count": 0}
+    return {"status": "active", "cycle": cycle}
 
 @app.post("/api/v1/evolution/trigger")
 async def trigger_evolution():
-    global evolution_cycle
-    evolution_cycle += 1
-    return {"cycle": evolution_cycle, "discoveries": ["Pattern detected"], "timestamp": datetime.now().isoformat()}
-
-@app.get("/api/v1/evolution/predictions")
-async def evolution_predictions():
-    return {"predictions": [
-        {"market": "AI Video Generation", "growth": 0.89, "confidence": 0.85},
-        {"market": "Autonomous E-commerce", "growth": 0.92, "confidence": 0.88}
-    ]}
-
-# ============================================================
-# GOVERNANCE (Minimal)
-# ============================================================
-
-@app.get("/api/v1/governance/ceos")
-async def list_ceos():
-    return {"ceos": [{"shop_id": "prompts-shop", "personality": "aggressive"}, {"shop_id": "digital-shop", "personality": "balanced"}]}
-
-@app.get("/api/v1/ledger/summary")
-async def ledger_summary():
-    return {"total_value": 1500, "shop_balances": {"prompts-shop": 500, "digital-shop": 500, "analytics-shop": 500}}
+    global cycle
+    cycle += 1
+    return {"cycle": cycle}
 
 # ============================================================
 # MAIN
