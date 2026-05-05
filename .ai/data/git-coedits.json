@@ -1,0 +1,106 @@
+{
+  "analyzed_date": "2026-05-05T13:27:24.302Z",
+  "days_analyzed": 30,
+  "co_edits": [
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/index.html",
+      "frequency": 15
+    },
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/pages/two-factor-recovery.html",
+      "frequency": 12
+    },
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/pages/two-factor-setup.html",
+      "frequency": 12
+    },
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/js/core/telemetry.js",
+      "frequency": 6
+    },
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/js/core/api/cache.js",
+      "frequency": 6
+    },
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/js/core/api/cancellation.js",
+      "frequency": 6
+    },
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/js/core/api/deduplication.js",
+      "frequency": 6
+    },
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/js/core/api/enhanced-client.js",
+      "frequency": 6
+    },
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/js/core/api/transformers.js",
+      "frequency": 6
+    },
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/js/mocks/index.js",
+      "frequency": 6
+    },
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/js/core/api/client.js",
+      "frequency": 6
+    },
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/js/core/store/index.js",
+      "frequency": 6
+    },
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/js/domains/alerts/index.js",
+      "frequency": 6
+    },
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/js/domains/competitors/api.js",
+      "frequency": 6
+    },
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/js/domains/competitors/index.js",
+      "frequency": 6
+    },
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/js/domains/evolution/api.js",
+      "frequency": 6
+    },
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/js/domains/evolution/index.js",
+      "frequency": 6
+    },
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/js/domains/intelligence/api.js",
+      "frequency": 6
+    },
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/js/domains/intelligence/index.js",
+      "frequency": 6
+    },
+    {
+      "file1": "admin-portal/index.html",
+      "file2": "admin-portal/js/domains/reports/api.js",
+      "frequency": 6
+    }
+  ]
+}

@@ -1,0 +1,397 @@
+{
+  "analyzed_date": "2026-05-05T13:27:24.413Z",
+  "files": [
+    {
+      "file": "js\\dashboard.js",
+      "lines": 436,
+      "functions": 20,
+      "classes": 0,
+      "complexity_score": 48.72
+    },
+    {
+      "file": "js\\features\\offline\\request-queue.js",
+      "lines": 218,
+      "functions": 1,
+      "classes": 1,
+      "complexity_score": 11.36
+    },
+    {
+      "file": "js\\components\\shared\\upload-progress.js",
+      "lines": 230,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 9.6
+    },
+    {
+      "file": "js\\app\\session-manager.js",
+      "lines": 213,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 9.26
+    },
+    {
+      "file": "js\\components\\shared\\toast.js",
+      "lines": 208,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 9.16
+    },
+    {
+      "file": "js\\components\\shared\\form-error.js",
+      "lines": 205,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 9.1
+    },
+    {
+      "file": "js\\core\\utils\\error-logging.js",
+      "lines": 190,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 8.8
+    },
+    {
+      "file": "js\\core\\api\\enhanced-client.js",
+      "lines": 157,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 8.14
+    },
+    {
+      "file": "js\\mocks\\index.js",
+      "lines": 107,
+      "functions": 3,
+      "classes": 0,
+      "complexity_score": 8.14
+    },
+    {
+      "file": "js\\core\\components\\error-boundary.js",
+      "lines": 148,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 7.96
+    },
+    {
+      "file": "js\\app\\route-guard.js",
+      "lines": 138,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 7.76
+    },
+    {
+      "file": "js\\core\\utils\\retry-logic.js",
+      "lines": 132,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 7.640000000000001
+    },
+    {
+      "file": "js\\features\\offline\\online-manager.js",
+      "lines": 123,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 7.46
+    },
+    {
+      "file": "js\\features\\offline\\offline-indicator.js",
+      "lines": 120,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 7.4
+    },
+    {
+      "file": "js\\core\\api\\cache.js",
+      "lines": 112,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 7.24
+    },
+    {
+      "file": "js\\features\\auth\\two-factor\\verify.js",
+      "lines": 112,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 7.24
+    },
+    {
+      "file": "js\\components\\shared\\empty-state.js",
+      "lines": 111,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 7.220000000000001
+    },
+    {
+      "file": "js\\core\\store\\index.js",
+      "lines": 110,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 7.2
+    },
+    {
+      "file": "js\\core\\api\\client.js",
+      "lines": 98,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 6.96
+    },
+    {
+      "file": "js\\core\\api\\cancellation.js",
+      "lines": 80,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 6.6
+    },
+    {
+      "file": "js\\core\\api\\transformers.js",
+      "lines": 66,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 6.32
+    },
+    {
+      "file": "js\\core\\api\\deduplication.js",
+      "lines": 63,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 6.26
+    },
+    {
+      "file": "js\\features\\auth\\two-factor\\totp-generator.js",
+      "lines": 62,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 6.24
+    },
+    {
+      "file": "js\\features\\auth\\two-factor\\qr-code.js",
+      "lines": 55,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 6.1
+    },
+    {
+      "file": "js\\core\\telemetry.js",
+      "lines": 40,
+      "functions": 0,
+      "classes": 1,
+      "complexity_score": 5.8
+    },
+    {
+      "file": "vault-api.js",
+      "lines": 22,
+      "functions": 2,
+      "classes": 0,
+      "complexity_score": 4.44
+    },
+    {
+      "file": "js\\app\\route-config.js",
+      "lines": 49,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.98
+    },
+    {
+      "file": "js\\migration-helper.js",
+      "lines": 46,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.92
+    },
+    {
+      "file": "js\\domains\\shops\\api.js",
+      "lines": 28,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.56
+    },
+    {
+      "file": "js\\domains\\intelligence\\api.js",
+      "lines": 27,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.54
+    },
+    {
+      "file": "js\\components\\index.js",
+      "lines": 24,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.48
+    },
+    {
+      "file": "js\\domains\\reports\\api.js",
+      "lines": 21,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.42
+    },
+    {
+      "file": "js\\domains\\competitors\\api.js",
+      "lines": 19,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.38
+    },
+    {
+      "file": "js\\domains\\evolution\\api.js",
+      "lines": 19,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.38
+    },
+    {
+      "file": "js\\domains\\vault\\api.js",
+      "lines": 19,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.38
+    },
+    {
+      "file": "js\\features\\auth\\totp-helper.js",
+      "lines": 19,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.38
+    },
+    {
+      "file": "js\\domains\\settings\\api.js",
+      "lines": 16,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.32
+    },
+    {
+      "file": "js\\domains\\alerts\\index.js",
+      "lines": 11,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.22
+    },
+    {
+      "file": "js\\domains\\competitors\\index.js",
+      "lines": 11,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.22
+    },
+    {
+      "file": "js\\domains\\evolution\\index.js",
+      "lines": 11,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.22
+    },
+    {
+      "file": "js\\domains\\intelligence\\index.js",
+      "lines": 11,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.22
+    },
+    {
+      "file": "js\\domains\\reports\\index.js",
+      "lines": 11,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.22
+    },
+    {
+      "file": "js\\domains\\settings\\index.js",
+      "lines": 11,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.22
+    },
+    {
+      "file": "js\\domains\\shops\\index.js",
+      "lines": 11,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.22
+    },
+    {
+      "file": "js\\domains\\values\\index.js",
+      "lines": 11,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.22
+    },
+    {
+      "file": "js\\domains\\vault\\index.js",
+      "lines": 11,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.22
+    },
+    {
+      "file": "vault-status.js",
+      "lines": 11,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.22
+    },
+    {
+      "file": "js\\pages\\audit-log.js",
+      "lines": 3,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.06
+    },
+    {
+      "file": "js\\pages\\profile.js",
+      "lines": 3,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.06
+    },
+    {
+      "file": "js\\pages\\rate-limited.js",
+      "lines": 3,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.06
+    },
+    {
+      "file": "js\\pages\\reset-password-confirm.js",
+      "lines": 3,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.06
+    },
+    {
+      "file": "js\\pages\\session-expired.js",
+      "lines": 3,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.06
+    },
+    {
+      "file": "js\\pages\\two-factor-recovery.js",
+      "lines": 3,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.06
+    },
+    {
+      "file": "js\\pages\\two-factor-setup.js",
+      "lines": 3,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.06
+    },
+    {
+      "file": "js\\pages\\verify-email-pending.js",
+      "lines": 3,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.06
+    },
+    {
+      "file": "js\\pages\\verify-email.js",
+      "lines": 3,
+      "functions": 0,
+      "classes": 0,
+      "complexity_score": 0.06
+    }
+  ]
+}

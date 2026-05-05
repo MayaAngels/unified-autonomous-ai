@@ -1,0 +1,25 @@
+{
+  "generated_date": "2026-05-05T13:27:24.415Z",
+  "proposals": [
+    {
+      "id": "coedit-1777987644415-0",
+      "type": "co-location",
+      "confidence": 0.95,
+      "description": "Files in admin-portal and api are frequently edited together",
+      "suggestion": "Consider merging into a single domain",
+      "affected_files": [
+        "admin-portal/index.html",
+        "admin-portal/js/core/api/cache.js",
+        "admin-portal/index.html",
+        "admin-portal/js/core/api/cancellation.js",
+        "admin-portal/index.html",
+        "admin-portal/js/core/api/deduplication.js",
+        "admin-portal/index.html",
+        "admin-portal/js/core/api/enhanced-client.js",
+        "admin-portal/index.html",
+        "admin-portal/js/core/api/transformers.js"
+      ],
+      "estimated_impact": "Reduced navigation time"
+    }
+  ]
+}
