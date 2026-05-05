@@ -1,0 +1,77 @@
+<div class="card stripe-widget">
+    <h3><i class="fas fa-credit-card"></i> Stripe Integration</h3>
+    <div class="stripe-status">
+        <div class="status-item">
+            <span>Status:</span>
+            <span class="badge-warning">PARTIAL - Needs Attention</span>
+        </div>
+        <div class="status-item">
+            <span>Mode:</span>
+            <span>LIVE</span>
+        </div>
+        <div class="status-item">
+            <span>Secret Key:</span>
+            <span>CONFIGURED</span>
+        </div>
+        <div class="status-item">
+            <span>Publishable Key:</span>
+            <span>CONFIGURED</span>
+        </div>
+        <div class="status-item">
+            <span>Webhook:</span>
+            <span class="badge-danger">NOT CONFIGURED</span>
+        </div>
+    </div>
+    
+    <div class="missing-items">
+        <h4>Missing Configuration</h4>
+        <ul>
+            <li>Stripe Webhook Secret (whsec_...)</li>
+
+        </ul>
+    </div>
+    
+    <div class="next-steps">
+        <h4>Next Steps</h4>
+        <ul>
+            <li>Add Stripe Webhook Secret to complete setup</li>
+<li>Configure webhook endpoint in Stripe Dashboard</li>
+
+        </ul>
+    </div>
+    
+    <div class="action-buttons">
+        <button onclick="addWebhookSecret()" class="btn-primary">Add Webhook Secret</button>
+        <button onclick="testStripe()" class="btn-secondary">Test Connection</button>
+        <button onclick="dismissAlert()" class="btn-secondary">Dismiss</button>
+    </div>
+</div>
+
+<script>
+function addWebhookSecret() {
+    alert('To add webhook secret:\n1. Go to Stripe Dashboard -> Developers -> Webhooks\n2. Add endpoint: https://your-site.netlify.app/api/webhooks/stripe\n3. Copy the signing secret (whsec_...)\n4. Add to Netlify environment variables as STRIPE_WEBHOOK_SECRET');
+}
+
+function testStripe() {
+    fetch('/api/stripe/test').then(r => r.json()).then(data => {
+        if (data.connected) {
+            alert('Stripe connection successful!');
+        } else {
+            alert('Stripe connection failed. Check your API keys.');
+        }
+    }).catch(() => alert('Stripe test failed'));
+}
+
+function dismissAlert() {
+    document.querySelector('.stripe-widget').style.opacity = '0.5';
+    alert('Alert dismissed. You can reconfigure later from Settings.');
+}
+</script>
+
+<style>
+.stripe-widget .badge-warning { background: #fed7aa; color: #92400e; padding: 4px 8px; border-radius: 8px; }
+.stripe-widget .badge-danger { background: #fee2e2; color: #991b1b; padding: 4px 8px; border-radius: 8px; }
+.stripe-widget .missing-items, .stripe-widget .next-steps { margin-top: 15px; padding-top: 10px; border-top: 1px solid #eee; }
+.stripe-widget .missing-items ul, .stripe-widget .next-steps ul { margin-left: 20px; margin-top: 5px; color: #666; }
+.stripe-widget .action-buttons { margin-top: 15px; display: flex; gap: 10px; }
+</style>

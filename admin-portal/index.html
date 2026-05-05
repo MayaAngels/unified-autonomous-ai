@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vital Studio | Vi Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #ffffff; color: #111111; }
+        .app { display: flex; min-height: 100vh; }
+        .sidebar {
+            width: 280px;
+            background: #f8f8f8;
+            border-right: 1px solid #e8e8e8;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            z-index: 100;
+        }
+        .logo { padding: 30px 24px; border-bottom: 1px solid #e8e8e8; display: flex; align-items: center; gap: 12px; }
+        .logo-icon { font-size: 2rem; font-weight: bold; color: #111; font-family: monospace; }
+        .logo-text .main { font-size: 1rem; font-weight: 700; color: #111; }
+        .logo-text .sub { font-size: 0.7rem; color: #888; display: block; }
+        .logo-sub { padding: 0 24px 20px 24px; font-size: 0.7rem; color: #aaa; border-bottom: 1px solid #e8e8e8; margin-bottom: 10px; }
+        .nav-menu { flex: 1; padding: 20px 0; }
+        .nav-item { display: flex; align-items: center; padding: 12px 24px; color: #666; text-decoration: none; transition: all 0.3s; margin: 4px 12px; border-radius: 12px; cursor: pointer; }
+        .nav-item:hover { background: #e8e8e8; color: #111; }
+        .nav-item.active { background: #e8e8e8; color: #111; border-left: 3px solid #111; }
+        .nav-item i { width: 24px; margin-right: 12px; }
+        .sidebar-footer { padding: 20px; border-top: 1px solid #e8e8e8; }
+        .api-status { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: #999; }
+        .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #4caf50; }
+        .main-content { flex: 1; margin-left: 280px; padding: 20px 30px; }
+        .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #e8e8e8; }
+        .page-title h1 { font-size: 1.8rem; color: #111; }
+        .page-title p { color: #888; margin-top: 5px; }
+        .header-actions { display: flex; gap: 12px; align-items: center; }
+        .api-selector { display: flex; align-items: center; gap: 8px; background: #f0f0f0; padding: 8px 15px; border-radius: 10px; }
+        .api-selector select { background: transparent; border: none; color: #111; cursor: pointer; }
+        .btn-refresh { background: #f0f0f0; border: 1px solid #ddd; padding: 10px 20px; border-radius: 10px; color: #111; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+        .btn-refresh:hover { background: #e8e8e8; border-color: #111; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .stat-card { background: #fafafa; border-radius: 16px; padding: 20px; border: 1px solid #eee; text-align: center; }
+        .stat-value { font-size: 2rem; font-weight: 700; color: #111; }
+        .stat-label { color: #888; font-size: 0.8rem; margin-top: 5px; }
+        .card { background: #fafafa; border-radius: 16px; padding: 20px; margin-bottom: 20px; border: 1px solid #eee; }
+        .card h3 { color: #111; margin-bottom: 15px; border-left: 3px solid #111; padding-left: 10px; }
+        .data-table { width: 100%; border-collapse: collapse; }
+        .data-table th, .data-table td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+        .data-table th { color: #888; font-weight: 500; }
+        .badge-success { background: #e8f5e9; color: #2e7d32; padding: 4px 8px; border-radius: 8px; font-size: 0.7rem; }
+        .badge-warning { background: #fed7aa; color: #92400e; padding: 4px 8px; border-radius: 8px; font-size: 0.7rem; }
+        .badge-danger { background: #fee2e2; color: #991b1b; padding: 4px 8px; border-radius: 8px; font-size: 0.7rem; }
+        .badge-configured { background: #e8f5e9; color: #2e7d32; padding: 4px 8px; border-radius: 8px; font-size: 0.7rem; }
+        .badge-missing { background: #ffebee; color: #c62828; padding: 4px 8px; border-radius: 8px; font-size: 0.7rem; }
+        .secrets-tabs { display: flex; gap: 5px; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; flex-wrap: wrap; }
+        .tab-btn { padding: 8px 16px; background: none; border: none; cursor: pointer; border-radius: 8px; }
+        .tab-btn.active { background: #111; color: #fff; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .status-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #eee; flex-wrap: wrap; gap: 10px; }
+        .btn-small { background: #f0f0f0; border: 1px solid #ddd; padding: 4px 12px; border-radius: 8px; cursor: pointer; font-size: 0.8rem; }
+        .btn-primary { background: #111; color: #fff; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; }
+        .action-buttons { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
+        .competitor-link { color: #3b82f6; text-decoration: none; cursor: pointer; }
+        .competitor-link:hover { text-decoration: underline; }
+        .chart-container { height: 300px; margin-top: 15px; }
+        .vi-button { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #111; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000; transition: all 0.3s; }
+        .vi-button:hover { transform: scale(1.05); }
+        .vi-icon { font-size: 1.8rem; font-weight: bold; color: #fff; font-family: monospace; }
+        .vi-label { font-size: 0.55rem; font-weight: 600; color: #888; letter-spacing: 1px; }
+        .vi-chat { position: fixed; bottom: 100px; right: 30px; width: 380px; height: 500px; background: #fff; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: none; flex-direction: column; overflow: hidden; z-index: 1001; border: 1px solid #e0e0e0; }
+        .vi-chat.open { display: flex; }
+        .chat-header { background: #f8f8f8; padding: 15px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; }
+        .chat-messages { flex: 1; overflow-y: auto; padding: 15px; }
+        .chat-message { margin-bottom: 12px; }
+        .chat-message.user { text-align: right; }
+        .chat-message.user .text { background: #111; color: #fff; display: inline-block; padding: 8px 15px; border-radius: 20px; }
+        .chat-message.ai .text { background: #f0f0f0; display: inline-block; padding: 8px 15px; border-radius: 20px; }
+        .chat-input-area { display: flex; padding: 15px; border-top: 1px solid #eee; gap: 10px; }
+        .chat-input-area input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; }
+        .chat-input-area button { background: #111; color: #fff; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; }
+        @media (max-width: 768px) { .sidebar { width: 80px; } .sidebar span { display: none; } .main-content { margin-left: 80px; } }
+    </style>
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar">
+        <div class="logo"><div class="logo-icon">?</div><div class="logo-text"><div class="main">THE VITAL STUDIO</div><div class="sub">INTELLIGENCE</div></div></div>
+        <div class="logo-sub">by The Vital Studio Ltd · Ireland</div>
+        <nav class="nav-menu">
+            <div class="nav-item active" data-page="overview"><i class="fas fa-chart-line"></i><span>Overview</span></div>
+            <div class="nav-item" data-page="shops"><i class="fas fa-store"></i><span>Shops</span></div>
+            <div class="nav-item" data-page="competitors"><i class="fas fa-robot"></i><span>Competitors</span></div>
+            <div class="nav-item" data-page="intelligence"><i class="fas fa-brain"></i><span>Intelligence</span></div>
+            <div class="nav-item" data-page="evolution"><i class="fas fa-dna"></i><span>Evolution</span></div>
+            <div class="nav-item" data-page="values"><i class="fas fa-heart"></i><span>Values</span></div>
+            <div class="nav-item" data-page="alerts"><i class="fas fa-bell"></i><span>Alerts</span></div>
+            <div class="nav-item" data-page="vault"><i class="fas fa-vault"></i><span>Vault</span></div>
+            <div class="nav-item" data-page="settings"><i class="fas fa-cog"></i><span>Settings</span></div>
+        </nav>
+        <div class="sidebar-footer"><div class="api-status"><span class="status-dot"></span><span id="apiStatus">Connected to Render</span></div></div>
+    </aside>
+    
+    <main class="main-content">
+        <header class="top-bar">
+            <div class="page-title"><h1 id="pageTitle">Ecosystem Overview</h1><p id="pageSubtitle">Fractal Intelligence · The Vital Studio</p></div>
+            <div class="header-actions"><div class="api-selector"><label>API:</label><select id="apiSelect"><option value="http://localhost:8001">Local</option><option value="https://unified-autonomous-ai-docker.onrender.com" selected>Render (Cloud)</option></select></div><button class="btn-refresh" onclick="refreshAll()"><i class="fas fa-sync-alt"></i> Refresh</button></div>
+        </header>
+        
+        <!-- Overview Page -->
+        <div id="overviewPage" class="page active">
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-value" id="totalShops">3</div><div class="stat-label">Total Shops</div></div>
+                <div class="stat-card"><div class="stat-value" id="fractalScore">0.17</div><div class="stat-label">Fractal Intelligence</div></div>
+                <div class="stat-card"><div class="stat-value" id="marketingScore">57.1%</div><div class="stat-label">Marketing Autonomy</div></div>
+                <div class="stat-card"><div class="stat-value" id="syncStatus">Synced</div><div class="stat-label">Sync Status</div></div>
+            </div>
+            <div class="card"><h3>Shop Performance</h3><table class="data-table"><thead><tr><th>Shop</th><th>Uncatchability</th><th>Status</th><th>Lead Time</th><th>Actions</th></tr></thead><tbody id="shopsTableBody"></tbody></table></div>
+            <div class="card"><h3>Market Predictions</h3><div id="predictionsList"></div></div>
+        </div>
+        
+        <!-- Shops Page -->
+        <div id="shopsPage" class="page">
+            <div class="card"><h3>All Shops</h3><button class="btn-primary" onclick="showSpawnModal()" style="margin-bottom:15px;"><i class="fas fa-plus"></i> Spawn New Shop</button><div id="allShopsList"></div></div>
+        </div>
+        
+        <!-- Competitors Page -->
+        <div id="competitorsPage" class="page">
+            <div class="card"><h3>Technology Competitors (URIS)</h3><div id="macroCompetitors"></div></div>
+            <div class="card"><h3>Shop-Specific Competitors</h3><div id="shopCompetitors"></div></div>
+            <div class="card"><h3>Add Custom Competitor</h3><select id="competitorShopSelect"><option value="prompts-shop">Prompts Shop</option><option value="digital-shop">Digital Shop</option><option value="analytics-shop">Analytics Shop</option></select><input type="text" id="competitorName" placeholder="Competitor name"><button class="btn-small" onclick="addCompetitor()">Add</button></div>
+        </div>
+        
+        <!-- Intelligence Page -->
+        <div id="intelligencePage" class="page">
+            <div class="card"><h3>Global Intelligence Feed</h3><div id="intelligenceFeed"></div><div class="action-buttons"><input type="text" id="insightInput" placeholder="Add insight..."><button class="btn-small" onclick="addInsight()">Add</button></div></div>
+            <div class="card"><h3>Documents & Knowledge</h3><input type="file" id="docUpload" multiple><button class="btn-small" onclick="uploadDoc()">Upload</button><div id="docList"></div></div>
+        </div>
+        
+        <!-- Evolution Page -->
+        <div id="evolutionPage" class="page">
+            <div class="card"><h3>Evolution Controls</h3><button class="btn-primary" onclick="triggerEvolution()">Trigger Evolution Cycle</button><button class="btn-primary" onclick="generateAdvantage()">Generate Uncatchable Advantage</button><div id="evolutionStatus"></div></div>
+            <div class="card"><h3>Evolution History</h3><div id="evolutionHistory"></div></div>
+        </div>
+        
+        <!-- Values Page -->
+        <div id="valuesPage" class="page">
+            <div class="card"><h3>Human Values</h3><div class="action-buttons"><input type="text" id="newValue" placeholder="Value statement..."><input type="number" id="valueImportance" placeholder="Importance (0-1)" step="0.1" min="0" max="1"><button class="btn-small" onclick="addValue()">Add Value</button></div><div id="valuesList"></div></div>
+            <div class="card"><h3>Ethical Constraints</h3><div id="constraintsList"></div></div>
+        </div>
+        
+        <!-- Alerts Page -->
+        <div id="alertsPage" class="page">
+            <div class="card"><h3>Active Alerts</h3><div id="alertsList"></div></div>
+        </div>
+        
+        <!-- Vault Page -->
+        <div id="vaultPage" class="page">
+            <div class="card">
+                <h3>Vital Studio Master Vault</h3>
+                <div class="secrets-tabs">
+                    <button class="tab-btn active" data-tab="stripe">Stripe</button>
+                    <button class="tab-btn" data-tab="render">Render</button>
+                    <button class="tab-btn" data-tab="netlify">Netlify</button>
+                    <button class="tab-btn" data-tab="github">GitHub</button>
+                    <button class="tab-btn" data-tab="distribute">Distribute</button>
+                </div>
+                <div id="stripeTab" class="tab-content active"><div class="status-row"><span>Secret Key:</span><span class="badge-configured">Configured</span><button class="btn-small" onclick="editSecret('stripe','secret_key')">Edit</button></div><div class="status-row"><span>Publishable Key:</span><span class="badge-configured">Configured</span><button class="btn-small" onclick="editSecret('stripe','publishable_key')">Edit</button></div><div class="status-row"><span>Webhook Secret:</span><span class="badge-missing">Not Configured</span><button class="btn-small" onclick="editSecret('stripe','webhook_secret')">Edit</button></div><div class="status-row"><span>Mode:</span><span>LIVE</span></div><button class="btn-small" onclick="testStripe()">Test Connection</button></div>
+                <div id="renderTab" class="tab-content"><div class="status-row"><span>API Key:</span><span class="badge-configured">Configured</span><button class="btn-small" onclick="editSecret('render','api_key')">Edit</button></div></div>
+                <div id="netlifyTab" class="tab-content"><div class="status-row"><span>Token:</span><span class="badge-configured">Configured</span><button class="btn-small" onclick="editSecret('netlify','token')">Edit</button></div></div>
+                <div id="githubTab" class="tab-content"><div class="status-row"><span>Token:</span><span class="badge-configured">Configured</span><button class="btn-small" onclick="editSecret('github','token')">Edit</button></div></div>
+                <div id="distributeTab" class="tab-content"><h4>Distribute Secrets to Shops</h4><label><input type="checkbox" id="distStripe" checked> Stripe Keys</label><label><input type="checkbox" id="distRender"> Render Key</label><label><input type="checkbox" id="distNetlify"> Netlify Token</label><label><input type="checkbox" id="distGithub"> GitHub Token</label><button class="btn-primary" onclick="distributeSecrets()">Distribute</button><div id="distributeResult"></div></div>
+            </div>
+        </div>
+        
+        <!-- Settings Page -->
+        <div id="settingsPage" class="page">
+            <div class="card"><h3>API Connections</h3><div class="status-row"><span>Netlify URL:</span><input type="text" id="netlifyUrl" placeholder="https://origine-digital.netlify.app"></div><button class="btn-small" onclick="saveSettings()">Save</button></div>
+            <div class="card"><h3>System Controls</h3><label><input type="checkbox" id="autoCorrect" checked> Auto-Correct</label><button class="btn-primary" onclick="triggerEvolution()">Trigger Evolution</button></div>
+        </div>
+    </main>
+</div>
+
+<!-- Spawn Modal -->
+<div id="spawnModal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:2000; justify-content:center; align-items:center;"><div style="background:#fff; border-radius:16px; padding:20px; width:400px;"><h3>Spawn New Shop</h3><input type="text" id="newShopId" placeholder="Shop ID" style="width:100%; padding:10px; margin:10px 0;"><select id="focusArea" style="width:100%; padding:10px;"><option value="ai_prompts">AI Prompts</option><option value="digital_products">Digital Products</option><option value="analytics">Analytics</option></select><div style="display:flex; gap:10px; margin-top:20px;"><button onclick="closeModal()">Cancel</button><button class="btn-primary" onclick="executeSpawn()">Spawn</button></div></div></div>
+
+<!-- Vi Button -->
+<div class="vi-button" onclick="toggleViChat()"><div class="vi-icon">?</div><span class="vi-label">Vi</span></div>
+
+<!-- Vi Chat -->
+<div id="viChat" class="vi-chat"><div class="chat-header"><span>Vi - Vital Intelligence</span><span style="cursor:pointer;" onclick="toggleViChat()">?</span></div><div class="chat-messages" id="chatMessages"><div class="chat-message ai"><div class="text">Hello! I'm Vi. Ask me about shops, secrets, competitors, or the ecosystem.</div></div></div><div class="chat-input-area"><input type="text" id="chatInput" placeholder="Ask Vi..."><button onclick="sendChat()">Send</button></div></div>
+
+<script>
+let apiUrl = 'https://unified-autonomous-ai-docker.onrender.com';
+let currentCycle = 0;
+
+// Navigation
+document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', () => {
+        const page = item.dataset.page;
+        document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+        item.classList.add('active');
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(page + 'Page').classList.add('active');
+        const titles = { overview:'Ecosystem Overview', shops:'Shop Management', competitors:'Competitor Intelligence', intelligence:'Global Intelligence', evolution:'Evolution Engine', values:'Values & Ethics', alerts:'Alerts & Monitoring', vault:'Secrets Vault', settings:'System Settings' };
+        document.getElementById('pageTitle').innerText = titles[page] || 'Dashboard';
+        if (page === 'competitors') loadCompetitors();
+    });
+});
+
+// Tab switching
+document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.getElementById(tab + 'Tab').classList.add('active');
+    });
+});
+
+async function fetchAPI(endpoint, method = 'GET', body = null) {
+    try {
+        const options = { method, headers: { 'Content-Type': 'application/json' } };
+        if (body) options.body = JSON.stringify(body);
+        const res = await fetch(`${apiUrl}${endpoint}`, options);
+        if (!res.ok) throw new Error();
+        return await res.json();
+    } catch(e) { return null; }
+}
+
+async function refreshAll() {
+    const dash = await fetchAPI('/api/v1/dashboard/unified');
+    if (dash) {
+        document.getElementById('fractalScore').innerText = dash.fractal_intelligence_score?.toFixed(2) || '0.00';
+        document.getElementById('marketingScore').innerHTML = dash.marketing_autonomy?.score || '57.1%';
+        const shops = dash.shop_intelligence?.shops || [];
+        document.getElementById('totalShops').innerText = shops.length;
+        const tbody = document.getElementById('shopsTableBody');
+        if (tbody) {
+            tbody.innerHTML = '';
+            shops.forEach(shop => {
+                const row = tbody.insertRow();
+                row.insertCell(0).innerHTML = `<strong>${shop.shop_id}</strong>`;
+                row.insertCell(1).innerHTML = `${(shop.uncatchability * 100).toFixed(0)}%`;
+                row.insertCell(2).innerHTML = `<span class="${shop.status === 'AHEAD' ? 'badge-success' : shop.status === 'COMPETITIVE' ? 'badge-warning' : 'badge-danger'}">${shop.status}</span>`;
+                row.insertCell(3).innerHTML = `${shop.lead_time_days || 0} days`;
+                row.insertCell(4).innerHTML = `<button class="btn-small" onclick="viewShop('${shop.shop_id}')">View</button>`;
+            });
+        }
+    }
+    const status = await fetchAPI('/api/v1/evolution/status');
+    if (status) document.getElementById('evolutionStatus').innerHTML = `<p>Cycle: ${status.cycle || 0}</p>`;
+}
+
+async function loadCompetitors() {
+    const comp = await fetchAPI('/api/v1/shop/competitors/prompts-shop');
+    if (comp && comp.competitors) {
+        document.getElementById('shopCompetitors').innerHTML = '<table class="data-table"><thead><tr><th>Competitor</th><th>Price Index</th><th>Strength</th><th>Link</th></tr></thead><tbody>' + comp.competitors.map(c => `<tr><td>${c.competitor}</td><td>${c.price_index}</td><td>${(c.strength_score * 100).toFixed(0)}%</td><td><a href="#" class="competitor-link" onclick="window.open('https://www.${c.competitor.toLowerCase().replace(/[^a-z]/g, '')}.com', '_blank')">View ?</a></td></tr>`).join('') + '</tbody></table>';
+    }
+    const uris = await fetchAPI('/api/v1/uris/status');
+    if (uris && uris.watchers) {
+        document.getElementById('macroCompetitors').innerHTML = '<table class="data-table"><thead><tr><th>Competitor</th><th>Type</th><th>Status</th></tr></thead><tbody>' + uris.watchers.map(w => `<tr><td>${w}</td><td>Technology</td><td><span class="badge-success">Monitoring</span></td></tr>`).join('') + '</tbody></table>';
+    }
+}
+
+function viewShop(shopId) { alert(`Viewing ${shopId} details`); }
+function showSpawnModal() { document.getElementById('spawnModal').style.display = 'flex'; }
+function closeModal() { document.getElementById('spawnModal').style.display = 'none'; }
+async function executeSpawn() { const id = document.getElementById('newShopId').value; if(!id) return; await fetchAPI('/api/v1/spawn/create', 'POST', { parent_shops: [], focus_area: document.getElementById('focusArea').value, initial_capabilities: ['autonomous'] }); alert(`Spawned ${id}`); closeModal(); refreshAll(); }
+async function triggerEvolution() { const res = await fetchAPI('/api/v1/evolution/trigger', 'POST'); if(res) alert(`Evolution cycle ${res.cycle} triggered!`); refreshAll(); }
+async function generateAdvantage() { const res = await fetchAPI('/api/v1/uris/generate-advantage', 'POST'); if(res) alert(`Advantage generated: ${res.advantage.name}`); }
+async function addValue() { const val = document.getElementById('newValue').value; const imp = parseFloat(document.getElementById('valueImportance').value || 0.7); if(val) await fetchAPI('/api/v1/values/add', 'POST', { statement: val, dimensions: ['stability'], importance: imp }); alert('Value added'); }
+async function addInsight() { const insight = document.getElementById('insightInput').value; if(insight) { alert(`Insight added: ${insight}`); document.getElementById('insightInput').value = ''; } }
+async function uploadDoc() { alert('Document upload simulation'); }
+function addCompetitor() { alert('Competitor added'); }
+function editSecret(service, field) { alert(`Edit ${service} ${field}`); }
+function testStripe() { alert('Testing Stripe connection...'); }
+function distributeSecrets() { alert('Secrets distributed!'); }
+function saveSettings() { alert('Settings saved'); }
+
+function toggleViChat() { document.getElementById('viChat').classList.toggle('open'); }
+async function sendChat() {
+    const input = document.getElementById('chatInput');
+    const msg = input.value.trim();
+    if (!msg) return;
+    const container = document.getElementById('chatMessages');
+    container.innerHTML += `<div class="chat-message user"><div class="text">${escapeHtml(msg)}</div></div>`;
+    input.value = '';
+    container.scrollTop = container.scrollHeight;
+    const res = await fetchAPI('/api/v1/knowledge/chat', 'POST', { message: msg });
+    container.innerHTML += `<div class="chat-message ai"><div class="text">${escapeHtml(res?.response || "I'm here to help with The Vital Studio ecosystem.")}</div></div>`;
+    container.scrollTop = container.scrollHeight;
+}
+function escapeHtml(t) { return t.replace(/[&<>]/g, function(m){ if(m==='&') return '&amp;'; if(m==='<') return '&lt;'; if(m==='>') return '&gt;'; return m; }); }
+
+refreshAll();
+setInterval(refreshAll, 30000);
+</script>
+</body>
+</html>

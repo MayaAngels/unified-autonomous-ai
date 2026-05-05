@@ -1,0 +1,54 @@
+<div class="card vault-widget">
+    <h3><i class="fas fa-vault"></i> Vital Studio Master Vault</h3>
+    <div class="vault-status">
+        <div class="status-item">
+            <span>Vault Status:</span>
+            <span class="badge-success">ACTIVE</span>
+        </div>
+        <div class="status-item">
+            <span>Stripe:</span>
+            <span>CONFIGURED</span>
+        </div>
+        <div class="status-item">
+            <span>Stripe Mode:</span>
+            <span>LIVE</span>
+        </div>
+        <div class="status-item">
+            <span>Render:</span>
+            <span>CONFIGURED</span>
+        </div>
+        <div class="status-item">
+            <span>Netlify:</span>
+            <span>CONFIGURED</span>
+        </div>
+        <div class="status-item">
+            <span>GitHub:</span>
+            <span>CONFIGURED</span>
+        </div>
+    </div>
+    <div class="action-buttons">
+        <button onclick="distributeToShops()" class="btn-primary">Distribute to All Shops</button>
+        <button onclick="addNewSecret()" class="btn-secondary">Add New Secret</button>
+        <button onclick="viewVault()" class="btn-secondary">View Vault</button>
+    </div>
+</div>
+
+<script>
+function distributeToShops() {
+    alert('Distributing secrets to all shops...\nThis will add Stripe keys to:\n- Prompts Shop\n- Digital Shop\n- Analytics Shop\n- Any future spawned shops');
+}
+
+function addNewSecret() {
+    alert('To add a new secret:\nRun the Add-Secrets-To-MasterVault.ps1 script again');
+}
+
+function viewVault() {
+    window.open('C:\Users\Maya\NewDigitalShop\vital-studio-intelligence\master_vault.json', '_blank');
+}
+</script>
+
+<style>
+.vault-widget .badge-success { background: #e8f5e9; color: #2e7d32; padding: 4px 8px; border-radius: 8px; }
+.vault-widget .status-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; }
+.vault-widget .action-buttons { margin-top: 15px; display: flex; gap: 10px; }
+</style>

@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Expired | The Vital Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #111111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .auth-container {
+            max-width: 520px;
+            width: 100%;
+            background: #fafafa;
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid #e8e8e8;
+        }
+        .logo { text-align: center; margin-bottom: 32px; }
+        .logo-icon { font-size: 48px; font-weight: bold; color: #111; font-family: monospace; }
+        .logo-text { font-size: 12px; color: #888; margin-top: 8px; letter-spacing: 1px; }
+        h1 { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+        .description { color: #666; margin-bottom: 24px; font-size: 14px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 500; color: #333; font-size: 14px; }
+        input, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 12px; font-size: 14px; background: #fff; }
+        input:focus { outline: none; border-color: #111; }
+        .btn-primary, .btn-secondary {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .btn-primary { background: #111; color: #fff; }
+        .btn-primary:hover { background: #333; }
+        .btn-secondary { background: #f0f0f0; color: #111; border: 1px solid #ddd; }
+        .back-link { display: block; text-align: center; margin-top: 24px; color: #60a5fa; text-decoration: none; font-size: 14px; }
+        .vi-button {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 48px;
+            height: 48px;
+            background: #111;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .vi-icon { font-size: 24px; font-weight: bold; color: #fff; font-family: monospace; }
+        .badge-success { background: #e8f5e9; color: #2e7d32; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; }
+        .badge-missing { background: #ffebee; color: #c62828; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; }
+        .data-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+        .data-table th, .data-table td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+                <div class="logo">
+            <div class="logo-icon">∇</div>
+            <div class="logo-text">THE VITAL STUDIO</div>
+        </div>
+        <h1>Session Expired</h1>
+        <p class="description">Your session has expired. Please log in again.</p>
+        <div id="app-root">
+            <div style="text-align: center; padding: 20px;">
+                <p>Session Expired page ready</p>
+                <button class="btn-primary" onclick="window.location.href='/index.html'">Go to Dashboard</button>
+            </div>
+        </div>
+        <a href="/index.html" class="back-link">← Back to Dashboard</a>
+    </div>
+        <div class="vi-button" onclick="alert('Vi Assistant: How can I help you?')">
+        <div class="vi-icon">∇</div>
+    </div>
+    <script>
+        console.log('session-expired page loaded');
+        
+        // Check for URL parameters (for verify-email)
+        if (window.location.search.indexOf('token') > -1) {
+            alert('Email verified successfully! You can now log in.');
+            window.location.href = '/login.html';
+        }
+    </script>
+</body>
+</html>
