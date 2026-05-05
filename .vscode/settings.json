@@ -1,0 +1,6 @@
+﻿{
+"files.autoSave": "onFocusChange",
+"editor.formatOnSave": true,
+"liveServer.settings.root": "/admin-portal",
+"liveServer.settings.port": 8080
+}
