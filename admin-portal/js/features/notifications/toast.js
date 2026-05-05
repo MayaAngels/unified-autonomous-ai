@@ -1,0 +1,1 @@
+class Toast { show(m) { alert(m); } } window.toast = new Toast();

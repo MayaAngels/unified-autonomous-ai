@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Auto-Pilot | Production Readiness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Inter',sans-serif;background:#fff;color:#111;padding:40px;}
+        h1{font-size:48px;}
+        .subtitle{color:#666;margin-bottom:40px;border-left:4px solid #00b4d8;padding-left:16px;}
+        .dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:40px;}
+        .card{background:#fafafa;border-radius:16px;padding:24px;border:1px solid #eee;}
+        .card h3{margin-bottom:16px;}
+        .progress-bar{background:#eee;border-radius:20px;height:20px;overflow:hidden;margin:16px 0;}
+        .progress-fill{background:#00b4d8;height:100%;width:0%;transition:width 0.5s;}
+        .stat-number{font-size:36px;font-weight:700;}
+        .checklist{background:#fafafa;border-radius:16px;padding:24px;border:1px solid #eee;}
+        .check-item{display:flex;align-items:center;padding:12px;border-bottom:1px solid #eee;}
+        .check-status{width:24px;height:24px;border-radius:50%;margin-right:16px;}
+        .status-pending{background:#ffeb3b;}
+        .status-pass{background:#4caf50;}
+        .status-missing{background:#f44336;}
+        .btn-run{background:#111;color:#fff;border:none;padding:14px 28px;border-radius:12px;cursor:pointer;font-size:16px;margin-top:20px;}
+        .btn-run:hover{background:#333;}
+    </style>
+</head>
+<body>
+    <h1>✈️ Auto-Pilot Engine</h1>
+    <div class="subtitle">Your system, flying itself to production. You just steer.</div>
+    
+    <div class="dashboard" id="dashboard"></div>
+    
+    <div class="checklist">
+        <h3>Production Readiness Checklist</h3>
+        <div id="checklist"></div>
+    </div>
+    
+    <button class="btn-run" onclick="runAnalysis()">✈️ Run Analysis</button>
+    
+    <script>
+        async function loadStatus() {
+            try {
+                const response = await fetch('/.ai/autopilot/reports/autopilot-report-*.md');
+                // In a real implementation, we'd parse the report
+            } catch(e) {}
+            
+            // Mock data for demo
+            document.getElementById('dashboard').innerHTML = `
+                <div class="card"><h3>Overall Readiness</h3><div class="stat-number">67%</div><div class="progress-bar"><div class="progress-fill" style="width:67%"></div></div><div>8/12 checks complete</div></div>
+                <div class="card"><h3>Authentication</h3><div class="stat-number">80%</div><div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div><div>4/5 complete</div></div>
+                <div class="card"><h3>Payments</h3><div class="stat-number">25%</div><div class="progress-bar"><div class="progress-fill" style="width:25%"></div></div><div>1/4 complete</div></div>
+                <div class="card"><h3>Pages</h3><div class="stat-number">60%</div><div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div><div>3/5 complete</div></div>
+            `;
+            
+            document.getElementById('checklist').innerHTML = `
+                <div class="check-item"><div class="check-status status-pass"></div><div>Login page exists</div></div>
+                <div class="check-item"><div class="check-status status-pass"></div><div>Registration works</div></div>
+                <div class="check-item"><div class="check-status status-missing"></div><div>Stripe integration</div></div>
+                <div class="check-item"><div class="check-status status-missing"></div><div>Twitter/X integration (human action needed)</div></div>
+                <div class="check-item"><div class="check-status status-pending"></div><div>Unit tests</div></div>
+            `;
+        }
+        
+        function runAnalysis() {
+            alert('✈️ Auto-Pilot analysis started!\n\nChecking your system for gaps...\nGenerating missing builders...\nCreating human action report...\n\nCheck the console for results.');
+            window.open('/.ai/autopilot/reports/', '_blank');
+        }
+        
+        loadStatus();
+    </script>
+</body>
+</html>

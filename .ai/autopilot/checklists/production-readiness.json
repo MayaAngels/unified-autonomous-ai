@@ -1,0 +1,67 @@
+{
+    "version": "1.0",
+    "last_updated": "2026-05-05",
+    "categories": {
+        "authentication": {
+            "required": true,
+            "checks": [
+                {"id": "AUTH-01", "name": "Login page exists", "status": "pending", "builder_needed": "login-builder"},
+                {"id": "AUTH-02", "name": "Registration works", "status": "pending", "builder_needed": "register-builder"},
+                {"id": "AUTH-03", "name": "Password reset flow", "status": "pending", "builder_needed": "reset-builder"},
+                {"id": "AUTH-04", "name": "Session management", "status": "pending", "builder_needed": "session-builder"},
+                {"id": "AUTH-05", "name": "2FA enabled", "status": "pending", "builder_needed": "2fa-builder"}
+            ]
+        },
+        "payments": {
+            "required": true,
+            "checks": [
+                {"id": "PAY-01", "name": "Stripe integration", "status": "pending", "builder_needed": "stripe-builder"},
+                {"id": "PAY-02", "name": "Webhook handler", "status": "pending", "builder_needed": "webhook-builder"},
+                {"id": "PAY-03", "name": "Subscription management", "status": "pending", "builder_needed": "subscription-builder"},
+                {"id": "PAY-04", "name": "Payment success/failure pages", "status": "pending", "builder_needed": "payment-pages-builder"}
+            ]
+        },
+        "social_media": {
+            "required": false,
+            "checks": [
+                {"id": "SOC-01", "name": "Twitter/X integration", "status": "pending", "builder_needed": "twitter-builder", "human_action": "Create Twitter Developer App"},
+                {"id": "SOC-02", "name": "Discord integration", "status": "pending", "builder_needed": "discord-builder", "human_action": "Create Discord Application"},
+                {"id": "SOC-03", "name": "Telegram integration", "status": "pending", "builder_needed": "telegram-builder", "human_action": "Create Telegram Bot"}
+            ]
+        },
+        "pages": {
+            "required": true,
+            "checks": [
+                {"id": "PAGE-01", "name": "Home page", "status": "pending", "builder_needed": "home-builder"},
+                {"id": "PAGE-02", "name": "Dashboard", "status": "pending", "builder_needed": "dashboard-builder"},
+                {"id": "PAGE-03", "name": "Settings page", "status": "pending", "builder_needed": "settings-builder"},
+                {"id": "PAGE-04", "name": "Profile page", "status": "pending", "builder_needed": "profile-builder"},
+                {"id": "PAGE-05", "name": "Error pages (404, 500)", "status": "pending", "builder_needed": "error-pages-builder"}
+            ]
+        },
+        "integrations": {
+            "required": false,
+            "checks": [
+                {"id": "INT-01", "name": "Email service (SendGrid/Mailgun)", "status": "pending", "builder_needed": "email-builder", "human_action": "Get API keys"},
+                {"id": "INT-02", "name": "Analytics (Google/Plausible)", "status": "pending", "builder_needed": "analytics-builder", "human_action": "Create analytics account"},
+                {"id": "INT-03", "name": "Monitoring (Sentry/Logtail)", "status": "pending", "builder_needed": "monitoring-builder", "human_action": "Get DSN/token"}
+            ]
+        },
+        "testing": {
+            "required": true,
+            "checks": [
+                {"id": "TEST-01", "name": "Unit tests for core features", "status": "pending", "builder_needed": "unit-test-builder"},
+                {"id": "TEST-02", "name": "Integration tests", "status": "pending", "builder_needed": "integration-test-builder"},
+                {"id": "TEST-03", "name": "E2E tests", "status": "pending", "builder_needed": "e2e-test-builder"}
+            ]
+        },
+        "deployment": {
+            "required": true,
+            "checks": [
+                {"id": "DEPLOY-01", "name": "Render configuration", "status": "pending", "builder_needed": "render-builder"},
+                {"id": "DEPLOY-02", "name": "Environment variables", "status": "pending", "builder_needed": "env-builder", "human_action": "Collect API keys"},
+                {"id": "DEPLOY-03", "name": "Domain configuration", "status": "pending", "builder_needed": "domain-builder", "human_action": "Buy domain, configure DNS"}
+            ]
+        }
+    }
+}

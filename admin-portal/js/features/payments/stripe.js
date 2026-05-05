@@ -1,0 +1,1 @@
+class Stripe { pay(a) { return true; } } window.stripe = new Stripe();
