@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -90,7 +90,7 @@
 <div class="app">
     <aside class="sidebar">
         <div class="logo"><div class="logo-icon">?</div><div class="logo-text"><div class="main">THE VITAL STUDIO</div><div class="sub">INTELLIGENCE</div></div></div>
-        <div class="logo-sub">by The Vital Studio Ltd · Ireland</div>
+        <div class="logo-sub">by The Vital Studio Ltd ï¿½ Ireland</div>
         <nav class="nav-menu">
             <div class="nav-item active" data-page="overview"><i class="fas fa-chart-line"></i><span>Overview</span></div>
             <div class="nav-item" data-page="shops"><i class="fas fa-store"></i><span>Shops</span></div>
@@ -107,7 +107,7 @@
     
     <main class="main-content">
         <header class="top-bar">
-            <div class="page-title"><h1 id="pageTitle">Ecosystem Overview</h1><p id="pageSubtitle">Fractal Intelligence · The Vital Studio</p></div>
+            <div class="page-title"><h1 id="pageTitle">Ecosystem Overview</h1><p id="pageSubtitle">Fractal Intelligence ï¿½ The Vital Studio</p></div>
             <div class="header-actions"><div class="api-selector"><label>API:</label><select id="apiSelect"><option value="http://localhost:8001">Local</option><option value="https://unified-autonomous-ai-docker.onrender.com" selected>Render (Cloud)</option></select></div><button class="btn-refresh" onclick="refreshAll()"><i class="fas fa-sync-alt"></i> Refresh</button></div>
         </header>
         
@@ -301,5 +301,10 @@ function escapeHtml(t) { return t.replace(/[&<>]/g, function(m){ if(m==='&') ret
 refreshAll();
 setInterval(refreshAll, 30000);
 </script>
+    <!-- Route Guard & Session Manager -->
+    <script src="/js/app/route-config.js"></script>
+    <script src="/js/app/session-manager.js"></script>
+    <script src="/js/app/route-guard.js"></script>
 </body>
 </html>
+
