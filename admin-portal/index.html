@@ -305,7 +305,18 @@ setInterval(refreshAll, 30000);
     <script src="/js/app/route-config.js"></script>
     <script src="/js/app/session-manager.js"></script>
     <script src="/js/app/route-guard.js"></script>
-    <!-- Shared Components -->
+        <!-- Domain Architecture (DDD) -->
+    <script type="module" src="/js/core/api/client.js"></script>
+    <script type="module" src="/js/domains/shops/api.js"></script>
+    <script type="module" src="/js/domains/competitors/api.js"></script>
+    <script type="module" src="/js/domains/intelligence/api.js"></script>
+    <script type="module" src="/js/domains/evolution/api.js"></script>
+    <script type="module" src="/js/domains/vault/api.js"></script>
+    <script type="module" src="/js/domains/reports/api.js"></script>
+    <script type="module" src="/js/domains/settings/api.js"></script>
+    <script src="/js/core/store/index.js"></script>
+    <script src="/js/migration-helper.js"></script>
+    
     <script src="/js/components/shared/empty-state.js"></script>
     <script src="/js/components/shared/toast.js"></script>
     <script src="/js/components/shared/form-error.js"></script>
@@ -313,5 +324,6 @@ setInterval(refreshAll, 30000);
     <script src="/js/components/index.js"></script>
     
 </html>
+
 
 
