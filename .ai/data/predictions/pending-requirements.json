@@ -1,0 +1,22 @@
+{
+    "requirements": [
+        {
+            "text": "We need a payment domain for handling subscriptions and billing",
+            "source": "manual",
+            "priority": "high",
+            "timestamp": "2026-05-05T10:00:00.000Z"
+        },
+        {
+            "text": "Add notifications system for email and Slack alerts",
+            "source": "manual",
+            "priority": "medium",
+            "timestamp": "2026-05-05T10:00:00.000Z"
+        },
+        {
+            "text": "Create analytics module for tracking user behavior",
+            "source": "manual",
+            "priority": "medium",
+            "timestamp": "2026-05-05T10:00:00.000Z"
+        }
+    ]
+}

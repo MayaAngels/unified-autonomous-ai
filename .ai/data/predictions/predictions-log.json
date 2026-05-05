@@ -1,0 +1,26 @@
+[
+  {
+    "requirement": "We need a payment domain for handling subscriptions and billing",
+    "source": "manual",
+    "detected_domain": "intelligence",
+    "confidence": 0.7,
+    "already_exists": true,
+    "timestamp": "2026-05-05T13:34:08.316Z"
+  },
+  {
+    "requirement": "Add notifications system for email and Slack alerts",
+    "source": "manual",
+    "detected_domain": "intelligence",
+    "confidence": 0.7,
+    "already_exists": true,
+    "timestamp": "2026-05-05T13:34:08.318Z"
+  },
+  {
+    "requirement": "Create analytics module for tracking user behavior",
+    "source": "manual",
+    "detected_domain": "competitors",
+    "confidence": 0.7,
+    "already_exists": true,
+    "timestamp": "2026-05-05T13:34:08.318Z"
+  }
+]
