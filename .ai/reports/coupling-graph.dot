@@ -1,0 +1,12 @@
+digraph CouplingGraph {
+  rankdir=LR;
+  node [shape=box, style=filled, fillcolor=lightblue];
+
+  "client.js" -> "api.js" [label="1"];
+  "client.js" -> "api.js" [label="1"];
+  "client.js" -> "api.js" [label="1"];
+  "client.js" -> "api.js" [label="1"];
+  "client.js" -> "api.js" [label="1"];
+  "client.js" -> "api.js" [label="1"];
+  "client.js" -> "api.js" [label="1"];
+}

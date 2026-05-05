@@ -1,0 +1,1481 @@
+{
+  "analyzed_date": "2026-05-05T13:39:00.075Z",
+  "days_analyzed": 30,
+  "coupling": [
+    {
+      "file1": "admin-portal/js/core/api/cache.js",
+      "file2": "admin-portal/js/core/api/cancellation.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/cache.js",
+      "file2": "admin-portal/js/core/api/deduplication.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/cache.js",
+      "file2": "admin-portal/js/core/api/enhanced-client.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/cache.js",
+      "file2": "admin-portal/js/core/api/transformers.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/cache.js",
+      "file2": "admin-portal/js/mocks/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/cancellation.js",
+      "file2": "admin-portal/js/core/api/deduplication.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/cancellation.js",
+      "file2": "admin-portal/js/core/api/enhanced-client.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/cancellation.js",
+      "file2": "admin-portal/js/core/api/transformers.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/cancellation.js",
+      "file2": "admin-portal/js/mocks/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/deduplication.js",
+      "file2": "admin-portal/js/core/api/enhanced-client.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/deduplication.js",
+      "file2": "admin-portal/js/core/api/transformers.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/deduplication.js",
+      "file2": "admin-portal/js/mocks/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/enhanced-client.js",
+      "file2": "admin-portal/js/core/api/transformers.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/enhanced-client.js",
+      "file2": "admin-portal/js/mocks/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/transformers.js",
+      "file2": "admin-portal/js/mocks/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/client.js",
+      "file2": "admin-portal/js/core/store/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/client.js",
+      "file2": "admin-portal/js/domains/alerts/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/client.js",
+      "file2": "admin-portal/js/domains/competitors/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/client.js",
+      "file2": "admin-portal/js/domains/competitors/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/client.js",
+      "file2": "admin-portal/js/domains/evolution/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/client.js",
+      "file2": "admin-portal/js/domains/evolution/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/client.js",
+      "file2": "admin-portal/js/domains/intelligence/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/client.js",
+      "file2": "admin-portal/js/domains/intelligence/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/client.js",
+      "file2": "admin-portal/js/domains/reports/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/client.js",
+      "file2": "admin-portal/js/domains/reports/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/client.js",
+      "file2": "admin-portal/js/domains/settings/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/client.js",
+      "file2": "admin-portal/js/domains/settings/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/client.js",
+      "file2": "admin-portal/js/domains/shops/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/client.js",
+      "file2": "admin-portal/js/domains/shops/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/client.js",
+      "file2": "admin-portal/js/domains/values/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/client.js",
+      "file2": "admin-portal/js/domains/vault/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/client.js",
+      "file2": "admin-portal/js/domains/vault/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/api/client.js",
+      "file2": "admin-portal/js/migration-helper.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/store/index.js",
+      "file2": "admin-portal/js/domains/alerts/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/store/index.js",
+      "file2": "admin-portal/js/domains/competitors/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/store/index.js",
+      "file2": "admin-portal/js/domains/competitors/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/store/index.js",
+      "file2": "admin-portal/js/domains/evolution/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/store/index.js",
+      "file2": "admin-portal/js/domains/evolution/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/store/index.js",
+      "file2": "admin-portal/js/domains/intelligence/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/store/index.js",
+      "file2": "admin-portal/js/domains/intelligence/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/store/index.js",
+      "file2": "admin-portal/js/domains/reports/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/store/index.js",
+      "file2": "admin-portal/js/domains/reports/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/store/index.js",
+      "file2": "admin-portal/js/domains/settings/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/store/index.js",
+      "file2": "admin-portal/js/domains/settings/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/store/index.js",
+      "file2": "admin-portal/js/domains/shops/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/store/index.js",
+      "file2": "admin-portal/js/domains/shops/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/store/index.js",
+      "file2": "admin-portal/js/domains/values/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/store/index.js",
+      "file2": "admin-portal/js/domains/vault/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/store/index.js",
+      "file2": "admin-portal/js/domains/vault/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/store/index.js",
+      "file2": "admin-portal/js/migration-helper.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/alerts/index.js",
+      "file2": "admin-portal/js/domains/competitors/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/alerts/index.js",
+      "file2": "admin-portal/js/domains/competitors/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/alerts/index.js",
+      "file2": "admin-portal/js/domains/evolution/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/alerts/index.js",
+      "file2": "admin-portal/js/domains/evolution/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/alerts/index.js",
+      "file2": "admin-portal/js/domains/intelligence/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/alerts/index.js",
+      "file2": "admin-portal/js/domains/intelligence/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/alerts/index.js",
+      "file2": "admin-portal/js/domains/reports/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/alerts/index.js",
+      "file2": "admin-portal/js/domains/reports/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/alerts/index.js",
+      "file2": "admin-portal/js/domains/settings/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/alerts/index.js",
+      "file2": "admin-portal/js/domains/settings/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/alerts/index.js",
+      "file2": "admin-portal/js/domains/shops/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/alerts/index.js",
+      "file2": "admin-portal/js/domains/shops/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/alerts/index.js",
+      "file2": "admin-portal/js/domains/values/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/alerts/index.js",
+      "file2": "admin-portal/js/domains/vault/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/alerts/index.js",
+      "file2": "admin-portal/js/domains/vault/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/alerts/index.js",
+      "file2": "admin-portal/js/migration-helper.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/api.js",
+      "file2": "admin-portal/js/domains/competitors/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/api.js",
+      "file2": "admin-portal/js/domains/evolution/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/api.js",
+      "file2": "admin-portal/js/domains/evolution/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/api.js",
+      "file2": "admin-portal/js/domains/intelligence/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/api.js",
+      "file2": "admin-portal/js/domains/intelligence/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/api.js",
+      "file2": "admin-portal/js/domains/reports/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/api.js",
+      "file2": "admin-portal/js/domains/reports/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/api.js",
+      "file2": "admin-portal/js/domains/settings/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/api.js",
+      "file2": "admin-portal/js/domains/settings/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/api.js",
+      "file2": "admin-portal/js/domains/shops/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/api.js",
+      "file2": "admin-portal/js/domains/shops/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/api.js",
+      "file2": "admin-portal/js/domains/values/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/api.js",
+      "file2": "admin-portal/js/domains/vault/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/api.js",
+      "file2": "admin-portal/js/domains/vault/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/api.js",
+      "file2": "admin-portal/js/migration-helper.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/index.js",
+      "file2": "admin-portal/js/domains/evolution/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/index.js",
+      "file2": "admin-portal/js/domains/evolution/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/index.js",
+      "file2": "admin-portal/js/domains/intelligence/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/index.js",
+      "file2": "admin-portal/js/domains/intelligence/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/index.js",
+      "file2": "admin-portal/js/domains/reports/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/index.js",
+      "file2": "admin-portal/js/domains/reports/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/index.js",
+      "file2": "admin-portal/js/domains/settings/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/index.js",
+      "file2": "admin-portal/js/domains/settings/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/index.js",
+      "file2": "admin-portal/js/domains/shops/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/index.js",
+      "file2": "admin-portal/js/domains/shops/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/index.js",
+      "file2": "admin-portal/js/domains/values/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/index.js",
+      "file2": "admin-portal/js/domains/vault/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/index.js",
+      "file2": "admin-portal/js/domains/vault/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/competitors/index.js",
+      "file2": "admin-portal/js/migration-helper.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/api.js",
+      "file2": "admin-portal/js/domains/evolution/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/api.js",
+      "file2": "admin-portal/js/domains/intelligence/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/api.js",
+      "file2": "admin-portal/js/domains/intelligence/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/api.js",
+      "file2": "admin-portal/js/domains/reports/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/api.js",
+      "file2": "admin-portal/js/domains/reports/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/api.js",
+      "file2": "admin-portal/js/domains/settings/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/api.js",
+      "file2": "admin-portal/js/domains/settings/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/api.js",
+      "file2": "admin-portal/js/domains/shops/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/api.js",
+      "file2": "admin-portal/js/domains/shops/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/api.js",
+      "file2": "admin-portal/js/domains/values/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/api.js",
+      "file2": "admin-portal/js/domains/vault/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/api.js",
+      "file2": "admin-portal/js/domains/vault/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/api.js",
+      "file2": "admin-portal/js/migration-helper.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/index.js",
+      "file2": "admin-portal/js/domains/intelligence/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/index.js",
+      "file2": "admin-portal/js/domains/intelligence/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/index.js",
+      "file2": "admin-portal/js/domains/reports/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/index.js",
+      "file2": "admin-portal/js/domains/reports/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/index.js",
+      "file2": "admin-portal/js/domains/settings/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/index.js",
+      "file2": "admin-portal/js/domains/settings/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/index.js",
+      "file2": "admin-portal/js/domains/shops/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/index.js",
+      "file2": "admin-portal/js/domains/shops/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/index.js",
+      "file2": "admin-portal/js/domains/values/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/index.js",
+      "file2": "admin-portal/js/domains/vault/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/index.js",
+      "file2": "admin-portal/js/domains/vault/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/evolution/index.js",
+      "file2": "admin-portal/js/migration-helper.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/api.js",
+      "file2": "admin-portal/js/domains/intelligence/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/api.js",
+      "file2": "admin-portal/js/domains/reports/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/api.js",
+      "file2": "admin-portal/js/domains/reports/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/api.js",
+      "file2": "admin-portal/js/domains/settings/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/api.js",
+      "file2": "admin-portal/js/domains/settings/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/api.js",
+      "file2": "admin-portal/js/domains/shops/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/api.js",
+      "file2": "admin-portal/js/domains/shops/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/api.js",
+      "file2": "admin-portal/js/domains/values/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/api.js",
+      "file2": "admin-portal/js/domains/vault/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/api.js",
+      "file2": "admin-portal/js/domains/vault/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/api.js",
+      "file2": "admin-portal/js/migration-helper.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/index.js",
+      "file2": "admin-portal/js/domains/reports/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/index.js",
+      "file2": "admin-portal/js/domains/reports/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/index.js",
+      "file2": "admin-portal/js/domains/settings/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/index.js",
+      "file2": "admin-portal/js/domains/settings/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/index.js",
+      "file2": "admin-portal/js/domains/shops/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/index.js",
+      "file2": "admin-portal/js/domains/shops/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/index.js",
+      "file2": "admin-portal/js/domains/values/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/index.js",
+      "file2": "admin-portal/js/domains/vault/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/index.js",
+      "file2": "admin-portal/js/domains/vault/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/intelligence/index.js",
+      "file2": "admin-portal/js/migration-helper.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/reports/api.js",
+      "file2": "admin-portal/js/domains/reports/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/reports/api.js",
+      "file2": "admin-portal/js/domains/settings/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/reports/api.js",
+      "file2": "admin-portal/js/domains/settings/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/reports/api.js",
+      "file2": "admin-portal/js/domains/shops/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/reports/api.js",
+      "file2": "admin-portal/js/domains/shops/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/reports/api.js",
+      "file2": "admin-portal/js/domains/values/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/reports/api.js",
+      "file2": "admin-portal/js/domains/vault/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/reports/api.js",
+      "file2": "admin-portal/js/domains/vault/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/reports/api.js",
+      "file2": "admin-portal/js/migration-helper.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/reports/index.js",
+      "file2": "admin-portal/js/domains/settings/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/reports/index.js",
+      "file2": "admin-portal/js/domains/settings/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/reports/index.js",
+      "file2": "admin-portal/js/domains/shops/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/reports/index.js",
+      "file2": "admin-portal/js/domains/shops/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/reports/index.js",
+      "file2": "admin-portal/js/domains/values/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/reports/index.js",
+      "file2": "admin-portal/js/domains/vault/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/reports/index.js",
+      "file2": "admin-portal/js/domains/vault/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/reports/index.js",
+      "file2": "admin-portal/js/migration-helper.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/settings/api.js",
+      "file2": "admin-portal/js/domains/settings/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/settings/api.js",
+      "file2": "admin-portal/js/domains/shops/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/settings/api.js",
+      "file2": "admin-portal/js/domains/shops/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/settings/api.js",
+      "file2": "admin-portal/js/domains/values/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/settings/api.js",
+      "file2": "admin-portal/js/domains/vault/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/settings/api.js",
+      "file2": "admin-portal/js/domains/vault/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/settings/api.js",
+      "file2": "admin-portal/js/migration-helper.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/settings/index.js",
+      "file2": "admin-portal/js/domains/shops/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/settings/index.js",
+      "file2": "admin-portal/js/domains/shops/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/settings/index.js",
+      "file2": "admin-portal/js/domains/values/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/settings/index.js",
+      "file2": "admin-portal/js/domains/vault/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/settings/index.js",
+      "file2": "admin-portal/js/domains/vault/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/settings/index.js",
+      "file2": "admin-portal/js/migration-helper.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/shops/api.js",
+      "file2": "admin-portal/js/domains/shops/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/shops/api.js",
+      "file2": "admin-portal/js/domains/values/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/shops/api.js",
+      "file2": "admin-portal/js/domains/vault/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/shops/api.js",
+      "file2": "admin-portal/js/domains/vault/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/shops/api.js",
+      "file2": "admin-portal/js/migration-helper.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/shops/index.js",
+      "file2": "admin-portal/js/domains/values/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/shops/index.js",
+      "file2": "admin-portal/js/domains/vault/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/shops/index.js",
+      "file2": "admin-portal/js/domains/vault/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/shops/index.js",
+      "file2": "admin-portal/js/migration-helper.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/values/index.js",
+      "file2": "admin-portal/js/domains/vault/api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/values/index.js",
+      "file2": "admin-portal/js/domains/vault/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/values/index.js",
+      "file2": "admin-portal/js/migration-helper.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/vault/api.js",
+      "file2": "admin-portal/js/domains/vault/index.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/vault/api.js",
+      "file2": "admin-portal/js/migration-helper.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/domains/vault/index.js",
+      "file2": "admin-portal/js/migration-helper.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/components/index.js",
+      "file2": "admin-portal/js/components/shared/empty-state.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/components/index.js",
+      "file2": "admin-portal/js/components/shared/form-error.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/components/index.js",
+      "file2": "admin-portal/js/components/shared/toast.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/components/index.js",
+      "file2": "admin-portal/js/components/shared/upload-progress.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/components/shared/empty-state.js",
+      "file2": "admin-portal/js/components/shared/form-error.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/components/shared/empty-state.js",
+      "file2": "admin-portal/js/components/shared/toast.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/components/shared/empty-state.js",
+      "file2": "admin-portal/js/components/shared/upload-progress.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/components/shared/form-error.js",
+      "file2": "admin-portal/js/components/shared/toast.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/components/shared/form-error.js",
+      "file2": "admin-portal/js/components/shared/upload-progress.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/components/shared/toast.js",
+      "file2": "admin-portal/js/components/shared/upload-progress.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/components/error-boundary.js",
+      "file2": "admin-portal/js/core/utils/error-logging.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/components/error-boundary.js",
+      "file2": "admin-portal/js/core/utils/retry-logic.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/components/error-boundary.js",
+      "file2": "admin-portal/js/features/offline/offline-indicator.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/components/error-boundary.js",
+      "file2": "admin-portal/js/features/offline/online-manager.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/components/error-boundary.js",
+      "file2": "admin-portal/js/features/offline/request-queue.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/utils/error-logging.js",
+      "file2": "admin-portal/js/core/utils/retry-logic.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/utils/error-logging.js",
+      "file2": "admin-portal/js/features/offline/offline-indicator.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/utils/error-logging.js",
+      "file2": "admin-portal/js/features/offline/online-manager.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/utils/error-logging.js",
+      "file2": "admin-portal/js/features/offline/request-queue.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/utils/retry-logic.js",
+      "file2": "admin-portal/js/features/offline/offline-indicator.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/utils/retry-logic.js",
+      "file2": "admin-portal/js/features/offline/online-manager.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/core/utils/retry-logic.js",
+      "file2": "admin-portal/js/features/offline/request-queue.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/features/offline/offline-indicator.js",
+      "file2": "admin-portal/js/features/offline/online-manager.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/features/offline/offline-indicator.js",
+      "file2": "admin-portal/js/features/offline/request-queue.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/features/offline/online-manager.js",
+      "file2": "admin-portal/js/features/offline/request-queue.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/features/auth/two-factor/qr-code.js",
+      "file2": "admin-portal/js/features/auth/two-factor/totp-generator.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/features/auth/two-factor/qr-code.js",
+      "file2": "admin-portal/js/features/auth/two-factor/verify.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/features/auth/two-factor/totp-generator.js",
+      "file2": "admin-portal/js/features/auth/two-factor/verify.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/app/route-config.js",
+      "file2": "admin-portal/js/app/route-guard.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/app/route-config.js",
+      "file2": "admin-portal/js/app/session-manager.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/app/route-guard.js",
+      "file2": "admin-portal/js/app/session-manager.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/dashboard.js",
+      "file2": "admin-portal/js/features/auth/totp-helper.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/dashboard.js",
+      "file2": "admin-portal/js/pages/audit-log.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/dashboard.js",
+      "file2": "admin-portal/js/pages/profile.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/dashboard.js",
+      "file2": "admin-portal/js/pages/rate-limited.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/dashboard.js",
+      "file2": "admin-portal/js/pages/reset-password-confirm.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/dashboard.js",
+      "file2": "admin-portal/js/pages/session-expired.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/dashboard.js",
+      "file2": "admin-portal/js/pages/two-factor-recovery.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/dashboard.js",
+      "file2": "admin-portal/js/pages/two-factor-setup.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/dashboard.js",
+      "file2": "admin-portal/js/pages/verify-email-pending.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/dashboard.js",
+      "file2": "admin-portal/js/pages/verify-email.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/dashboard.js",
+      "file2": "admin-portal/vault-api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/dashboard.js",
+      "file2": "admin-portal/vault-status.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/features/auth/totp-helper.js",
+      "file2": "admin-portal/js/pages/audit-log.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/features/auth/totp-helper.js",
+      "file2": "admin-portal/js/pages/profile.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/features/auth/totp-helper.js",
+      "file2": "admin-portal/js/pages/rate-limited.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/features/auth/totp-helper.js",
+      "file2": "admin-portal/js/pages/reset-password-confirm.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/features/auth/totp-helper.js",
+      "file2": "admin-portal/js/pages/session-expired.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/features/auth/totp-helper.js",
+      "file2": "admin-portal/js/pages/two-factor-recovery.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/features/auth/totp-helper.js",
+      "file2": "admin-portal/js/pages/two-factor-setup.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/features/auth/totp-helper.js",
+      "file2": "admin-portal/js/pages/verify-email-pending.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/features/auth/totp-helper.js",
+      "file2": "admin-portal/js/pages/verify-email.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/features/auth/totp-helper.js",
+      "file2": "admin-portal/vault-api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/features/auth/totp-helper.js",
+      "file2": "admin-portal/vault-status.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/audit-log.js",
+      "file2": "admin-portal/js/pages/profile.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/audit-log.js",
+      "file2": "admin-portal/js/pages/rate-limited.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/audit-log.js",
+      "file2": "admin-portal/js/pages/reset-password-confirm.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/audit-log.js",
+      "file2": "admin-portal/js/pages/session-expired.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/audit-log.js",
+      "file2": "admin-portal/js/pages/two-factor-recovery.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/audit-log.js",
+      "file2": "admin-portal/js/pages/two-factor-setup.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/audit-log.js",
+      "file2": "admin-portal/js/pages/verify-email-pending.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/audit-log.js",
+      "file2": "admin-portal/js/pages/verify-email.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/audit-log.js",
+      "file2": "admin-portal/vault-api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/audit-log.js",
+      "file2": "admin-portal/vault-status.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/profile.js",
+      "file2": "admin-portal/js/pages/rate-limited.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/profile.js",
+      "file2": "admin-portal/js/pages/reset-password-confirm.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/profile.js",
+      "file2": "admin-portal/js/pages/session-expired.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/profile.js",
+      "file2": "admin-portal/js/pages/two-factor-recovery.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/profile.js",
+      "file2": "admin-portal/js/pages/two-factor-setup.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/profile.js",
+      "file2": "admin-portal/js/pages/verify-email-pending.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/profile.js",
+      "file2": "admin-portal/js/pages/verify-email.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/profile.js",
+      "file2": "admin-portal/vault-api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/profile.js",
+      "file2": "admin-portal/vault-status.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/rate-limited.js",
+      "file2": "admin-portal/js/pages/reset-password-confirm.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/rate-limited.js",
+      "file2": "admin-portal/js/pages/session-expired.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/rate-limited.js",
+      "file2": "admin-portal/js/pages/two-factor-recovery.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/rate-limited.js",
+      "file2": "admin-portal/js/pages/two-factor-setup.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/rate-limited.js",
+      "file2": "admin-portal/js/pages/verify-email-pending.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/rate-limited.js",
+      "file2": "admin-portal/js/pages/verify-email.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/rate-limited.js",
+      "file2": "admin-portal/vault-api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/rate-limited.js",
+      "file2": "admin-portal/vault-status.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/reset-password-confirm.js",
+      "file2": "admin-portal/js/pages/session-expired.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/reset-password-confirm.js",
+      "file2": "admin-portal/js/pages/two-factor-recovery.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/reset-password-confirm.js",
+      "file2": "admin-portal/js/pages/two-factor-setup.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/reset-password-confirm.js",
+      "file2": "admin-portal/js/pages/verify-email-pending.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/reset-password-confirm.js",
+      "file2": "admin-portal/js/pages/verify-email.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/reset-password-confirm.js",
+      "file2": "admin-portal/vault-api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/reset-password-confirm.js",
+      "file2": "admin-portal/vault-status.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/session-expired.js",
+      "file2": "admin-portal/js/pages/two-factor-recovery.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/session-expired.js",
+      "file2": "admin-portal/js/pages/two-factor-setup.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/session-expired.js",
+      "file2": "admin-portal/js/pages/verify-email-pending.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/session-expired.js",
+      "file2": "admin-portal/js/pages/verify-email.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/session-expired.js",
+      "file2": "admin-portal/vault-api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/session-expired.js",
+      "file2": "admin-portal/vault-status.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/two-factor-recovery.js",
+      "file2": "admin-portal/js/pages/two-factor-setup.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/two-factor-recovery.js",
+      "file2": "admin-portal/js/pages/verify-email-pending.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/two-factor-recovery.js",
+      "file2": "admin-portal/js/pages/verify-email.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/two-factor-recovery.js",
+      "file2": "admin-portal/vault-api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/two-factor-recovery.js",
+      "file2": "admin-portal/vault-status.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/two-factor-setup.js",
+      "file2": "admin-portal/js/pages/verify-email-pending.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/two-factor-setup.js",
+      "file2": "admin-portal/js/pages/verify-email.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/two-factor-setup.js",
+      "file2": "admin-portal/vault-api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/two-factor-setup.js",
+      "file2": "admin-portal/vault-status.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/verify-email-pending.js",
+      "file2": "admin-portal/js/pages/verify-email.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/verify-email-pending.js",
+      "file2": "admin-portal/vault-api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/verify-email-pending.js",
+      "file2": "admin-portal/vault-status.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/verify-email.js",
+      "file2": "admin-portal/vault-api.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/js/pages/verify-email.js",
+      "file2": "admin-portal/vault-status.js",
+      "frequency": 1
+    },
+    {
+      "file1": "admin-portal/vault-api.js",
+      "file2": "admin-portal/vault-status.js",
+      "frequency": 1
+    }
+  ]
+}

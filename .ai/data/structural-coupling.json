@@ -1,0 +1,40 @@
+{
+  "analyzed_date": "2026-05-05T13:38:57.286Z",
+  "coupling": [
+    {
+      "from": "../../core/api/client.js",
+      "to": "js\\domains\\competitors\\api.js",
+      "strength": 1
+    },
+    {
+      "from": "../../core/api/client.js",
+      "to": "js\\domains\\evolution\\api.js",
+      "strength": 1
+    },
+    {
+      "from": "../../core/api/client.js",
+      "to": "js\\domains\\intelligence\\api.js",
+      "strength": 1
+    },
+    {
+      "from": "../../core/api/client.js",
+      "to": "js\\domains\\reports\\api.js",
+      "strength": 1
+    },
+    {
+      "from": "../../core/api/client.js",
+      "to": "js\\domains\\settings\\api.js",
+      "strength": 1
+    },
+    {
+      "from": "../../core/api/client.js",
+      "to": "js\\domains\\shops\\api.js",
+      "strength": 1
+    },
+    {
+      "from": "../../core/api/client.js",
+      "to": "js\\domains\\vault\\api.js",
+      "strength": 1
+    }
+  ]
+}
