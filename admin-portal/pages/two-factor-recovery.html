@@ -31,10 +31,17 @@
         .logo-text { font-size: 12px; color: #888; margin-top: 8px; letter-spacing: 1px; }
         h1 { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
         .description { color: #666; margin-bottom: 24px; font-size: 14px; }
-        .form-group { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 8px; font-weight: 500; color: #333; font-size: 14px; }
-        input, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 12px; font-size: 14px; background: #fff; }
-        input:focus { outline: none; border-color: #111; }
+        .warning-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; }
+        .codes-container {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 12px;
+            font-family: monospace;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .code-row { display: inline-block; width: 45%; padding: 8px; margin: 4px; background: #fff; border-radius: 8px; }
         .btn-primary, .btn-secondary {
             padding: 12px 24px;
             border: none;
@@ -43,9 +50,8 @@
             font-weight: 600;
             cursor: pointer;
         }
-        .btn-primary { background: #111; color: #fff; }
-        .btn-primary:hover { background: #333; }
-        .btn-secondary { background: #f0f0f0; color: #111; border: 1px solid #ddd; }
+        .btn-primary { background: #111; color: #fff; width: 100%; margin-bottom: 12px; }
+        .btn-secondary { background: #f0f0f0; color: #111; border: 1px solid #ddd; width: 48%; }
         .back-link { display: block; text-align: center; margin-top: 24px; color: #60a5fa; text-decoration: none; font-size: 14px; }
         .vi-button {
             position: fixed;
@@ -62,38 +68,101 @@
             z-index: 1000;
         }
         .vi-icon { font-size: 24px; font-weight: bold; color: #fff; font-family: monospace; }
-        .badge-success { background: #e8f5e9; color: #2e7d32; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; }
-        .badge-missing { background: #ffebee; color: #c62828; padding: 4px 12px; border-radius: 20px; font-size: 12px; display: inline-block; }
-        .data-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
-        .data-table th, .data-table td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; font-size: 14px; }
+        .button-group { display: flex; gap: 12px; justify-content: center; }
     </style>
 </head>
 <body>
     <div class="auth-container">
-                <div class="logo">
+        <div class="logo">
             <div class="logo-icon">∇</div>
             <div class="logo-text">THE VITAL STUDIO</div>
         </div>
         <h1>Recovery Codes</h1>
         <p class="description">Save these backup codes in a secure location</p>
-        <div id="app-root">
-            <div style="text-align: center; padding: 20px;">
-                <p>Recovery Codes page ready</p>
-                <button class="btn-primary" onclick="window.location.href='/index.html'">Go to Dashboard</button>
-            </div>
+        
+        <div class="warning-box">
+            ⚠️ Each code can only be used once. Store these safely.
         </div>
+        
+        <div class="codes-container" id="codes-container">
+            Loading codes...
+        </div>
+        
+        <div class="button-group">
+            <button class="btn-secondary" onclick="downloadCodes()">Download Codes</button>
+            <button class="btn-secondary" onclick="printCodes()">Print Codes</button>
+        </div>
+        
+        <button class="btn-primary" onclick="confirmComplete()" style="margin-top: 16px;">I've Saved My Codes →</button>
         <a href="/index.html" class="back-link">← Back to Dashboard</a>
     </div>
-        <div class="vi-button" onclick="alert('Vi Assistant: How can I help you?')">
+    <div class="vi-button" onclick="alert('Vi Assistant: Store these recovery codes somewhere safe, like a password manager.')">
         <div class="vi-icon">∇</div>
     </div>
+    
     <script>
-        console.log('two-factor-recovery page loaded');
+        let recoveryCodes = [];
         
-        // Check for URL parameters (for verify-email)
-        if (window.location.search.indexOf('token') > -1) {
-            alert('Email verified successfully! You can now log in.');
-            window.location.href = '/login.html';
+        document.addEventListener('DOMContentLoaded', function() {
+            const stored = sessionStorage.getItem('recovery_codes');
+            if (stored) {
+                recoveryCodes = JSON.parse(stored);
+                displayCodes();
+            } else {
+                // Generate new codes if none exist
+                recoveryCodes = [];
+                for (let i = 0; i < 8; i++) {
+                    const code = Math.random().toString(36).substring(2, 10).toUpperCase();
+                    recoveryCodes.push(code);
+                }
+                sessionStorage.setItem('recovery_codes', JSON.stringify(recoveryCodes));
+                displayCodes();
+            }
+        });
+        
+        function displayCodes() {
+            const container = document.getElementById('codes-container');
+            if (container && recoveryCodes.length) {
+                let html = '';
+                for (let i = 0; i < recoveryCodes.length; i++) {
+                    html += `<div class="code-row">${(i+1).toString().padStart(2, '0')}. ${recoveryCodes[i]}</div>`;
+                }
+                container.innerHTML = html;
+            }
+        }
+        
+        function downloadCodes() {
+            const content = recoveryCodes.join('\n');
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'vital-studio-recovery-codes.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+            alert('Recovery codes downloaded! Store them safely.');
+        }
+        
+        function printCodes() {
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <html><head><title>Recovery Codes - The Vital Studio</title></head>
+                <body style="font-family: monospace; padding: 40px; text-align: center;">
+                    <h1>The Vital Studio - Recovery Codes</h1>
+                    <p>Store these codes safely. Each code can be used once.</p>
+                    <div style="margin: 40px 0;">
+                        ${recoveryCodes.map((c, i) => `${(i+1).toString().padStart(2, '0')}. ${c}`).join('<br>')}
+                    </div>
+                    <p>Generated: ${new Date().toLocaleString()}</p>
+                </body></html>
+            `);
+            printWindow.document.close();
+            printWindow.print();
+        }
+        
+        function confirmComplete() {
+            sessionStorage.setItem('recovery_codes_confirmed', 'true');
+            window.location.href = '/index.html';
         }
     </script>
 </body>
