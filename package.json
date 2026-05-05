@@ -1,0 +1,8 @@
+﻿{
+  "name": "vital-studio-agents",
+  "version": "1.0.0",
+  "description": "AI Agents for The Vital Studio",
+  "scripts": {
+    "analyze": "node .ai/agents/usage-analyzer.js"
+  }
+}
